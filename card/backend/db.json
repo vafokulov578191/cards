@@ -1,0 +1,21 @@
+{
+  "cards": [
+    
+  ],
+  "transactions": [
+    {
+      "id": 1232312,
+      "cardName": "VISA",
+      "category": "Автомобиль",
+      "TransactionAmount": 120000,
+      "time": "1 дня назад"
+    },
+    {
+      "id": 7573532,
+      "cardName": "TINKOFF",
+      "category": "Мебель",
+      "TransactionAmount": 200000,
+      "time": "2 дня назад"
+    }
+  ]
+}

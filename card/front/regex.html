@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 1920px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0px auto;
+        }
+
+        .registrasiya {
+            font-weight: 700;
+            font-size: 48px;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+
+        .reg {
+            width: 438px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            gap: 10px;
+            transform: translate(-50%, -50%);
+        }
+
+        input {
+            width: 438px;
+            height: 56px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 10px;
+        }
+
+        .btn {
+            width: 438px;
+            height: 56px;
+            background: #0047FF;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn1 {
+            width: 438px;
+            height: 56px;
+            color: blue;
+            font-weight: 600;
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .open_side {
+            width: 438px;
+            height: 56px;
+            background: #0047FF;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <form class="reg" name="user">
+            <span class="registrasiya">Войти в аккаунт</span>
+            <input type="text" placeholder="Имя" name="name">
+            <input type="text" placeholder="Пароль" name="password">
+            <button class="btn">Продолжить</button>
+        </form>
+        <a href="./index.html"><button class="open_side">Продолжить</button></a>
+        <a href="./regist.html"><button class="btn1">Регистрация</button></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // let url = 'http://localhost:3001/users'
+        let todos = JSON.parse(localStorage.getItem('todos')) || []
+
+        // function app() {
+        //     axios.get(url)
+        //         .then(res => {
+        //             if (res.status === 200 || res.status === 201) {
+        //                 data = res.data
+        //                 reload(data)
+        //             }
+        //         })
+        // }
+        // app()
+        
+
+        let form = document.forms.user
+        let open_side = document.querySelector('.open_side')
+        let btn = document.querySelector('.btn')
+
+
+        form.onsubmit = (event) => {
+            event.preventDefault();
+
+            let user = {}
+            let fm = new FormData(form)
+            fm.forEach((value, key) => {
+                user[key] = value
+            })
+
+
+            if(user.name === todos.name || user.password === todos.password) {
+                btn.style.display = "none"
+                open_side.style.display = "block"
+            }
+        }
+
+        
+        // function reload(arr) {
+        //     for(let item of arr) {
+
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

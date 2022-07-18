@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="counatiner">
+            <header class="header">
+                <div class="header_counatiner">
+                    <div class="header_left">
+                        <a href=""><span>Главная</span></a>
+                        <a href="./cards.html"><span>Мои кошельки</span></a>
+                        <a href="./tranaction.html"><span>Мои транзакции</span></a>
+                    </div>
+                    <div class="header_right">
+                        <span class="Email_user">alexadams@google.com</span>
+                        <a href="./regex.html"><img class="close" src="./assets/img/log-out (1) 1.png" alt=""></a>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <div class="main_countainer">
+                    <div class="main_header">
+                        <h1>Добро пожаловать, <i class="user_name">Alex Adams</i>!</h1>
+                        <span class="Email_user">alexadams@google.com</span>
+                    </div>
+                    <div class="main_cards">
+                        <div class="main_cards_block">
+                            <span class="my_cards_text">Мои кошельки</span>
+                        </div>
+                        <div class="main_my_cards"></div>
+                        <div class="main_cards_block">
+                            <span class="my_cards_link">Смотреть все кошельки</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="footer_countainer">
+                    <div class="footer_information_block">
+                        <span class="my_cards_text">Последние транзакции</span>
+                    </div>
+                    <div class="footer_user_tranacsion">
+                        <div class="footer_block_header">
+                            <div class="footer_block_header_id">
+                                <span>ID</span>
+                            </div>
+                            <div class="footer_block_header_visa">
+                                <span>Отправлено с кошелька</span>
+                            </div>
+                            <div class="footer_block_header_category">
+                                <span>Категория</span>
+                            </div>
+                            <div class="footer_block_header_money">
+                                <span>Сумма транзации</span>
+                            </div>
+                            <div class="footer_block_header_time">
+                                <span>Когда</span>
+                            </div>
+                        </div>
+                        <div class="footer_tranacsion_item"></div>
+                    </div>
+                    <div class="footer_information_block">
+                        <span class="my_cards_link">Смотреть все оплаты</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>

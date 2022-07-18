@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 1920px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0px auto;
+        }
+
+        .registrasiya {
+            font-weight: 700;
+            font-size: 48px;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+
+        .reg {
+            width: 438px;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            gap: 10px;
+            transform: translate(-50%, -50%);
+        }
+
+        input {
+            width: 438px;
+            height: 56px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 10px;
+        }
+
+        .btn {
+            width: 438px;
+            height: 56px;
+            background: #0047FF;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn1 {
+            width: 438px;
+            height: 56px;
+            color: blue;
+            font-weight: 600;
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 73%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <form class="reg" action="" name="user">
+            <span class="registrasiya">Регистрация</span>
+            <input type="text" placeholder="Имя" name="name">
+            <input type="text" placeholder="Фамилия" name="surname">
+            <input type="text" placeholder="Почта" name="Email">
+            <input type="text" placeholder="Пароль" name="password">
+            <button class="btn">Продолжить</button>
+        </form>
+        <a href="./regex.html"><button class="btn1">Войти в аккаунт</button></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // let url = 'http://localhost:3001/users'
+        let data = JSON.parse(localStorage.getItem('todos')) || []
+
+        // function react() {
+        //     axios.get(url)
+        //     .then(res => {
+        //         if(res.status === 200 || res.status === 201) {
+        //             data = res.data
+        //         }
+        //     })
+        // }
+
+        // react()
+
+        let form = document.forms.user
+        form.onsubmit = (event) => {
+            event.preventDefault();
+
+            let user = {
+                id: Math.random()
+            }
+
+            let fm = new FormData(form)
+            fm.forEach((value, key) => {
+                user[key] = value
+            })
+
+            localStorage.setItem('todos', JSON.stringify(user))
+            // SetPost(user)
+        }
+
+        // function SetPost(post) {
+        //     axios.post(url, post)
+        //     .then(res => {
+        //         if(res.status === 200 || res.status === 201) {
+        //             res.data
+        //         }
+        //     })
+        // }
+
+    </script>
+</body>
+
+</html>
